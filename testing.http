@@ -1,0 +1,52 @@
+GET http://localhost:3000/?dueDate=2021-9-22
+
+###
+GET http://localhost:3000/todos
+
+###
+GET http://localhost:3000/todos?priority=HIGH
+
+###
+GET http://localhost:3000/todos/?status=TO%20DO
+
+###
+GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+
+###
+GET http://localhost:3000/todos/1
+
+###
+GET http://localhost:3000/agenda?date=2020-9-22
+
+###
+POST http://localhost:3000/todos/
+Content-Type: application/json
+
+{
+  "id": 6,
+  "todo": "Finalize event theme",
+  "priority": "LOW",
+  "status": "TO DO",
+  "category": "HOME",
+  "dueDate": "2021-0-22"
+}
+
+###
+PUT http://localhost:3000/todos/1
+Content-Type: application/json
+
+{
+    "todo": "Learn Node JS"
+}
+
+###
+GET http://localhost:3000/todos/?status=TO%20DO
+
+###
+DELETE http://localhost:3000/todos/6
+
+###
+GET http://localhost:3000/agenda?date=202-0-20
+
+###
+GET http://localhost:3000/todos/?search_q=Buy
