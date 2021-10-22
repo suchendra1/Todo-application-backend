@@ -138,6 +138,20 @@ const validateBodyDate = (req, res, next) => {
 
 app.use(express.json());
 
+const toResponseObj = (obj) => {
+  if (obj === undefined) {
+    return obj;
+  }
+  return {
+    id: obj.id,
+    todo: obj.todo,
+    priority: obj.priority,
+    category: obj.category,
+    status: obj.status,
+    dueDate: obj.due_date,
+  };
+};
+
 app.get("/todos/", validateData, async (req, res) => {
   const {
     category = undefined,
@@ -177,7 +191,7 @@ app.get("/todos/", validateData, async (req, res) => {
   }
   query += `;`;
   const todoList = await db.all(query);
-  res.send(todoList);
+  res.send(todoList.map((obj) => toResponseObj(obj)));
 });
 
 app.get("/todos/:todoId/", validateData, async (req, res) => {
@@ -186,7 +200,7 @@ app.get("/todos/:todoId/", validateData, async (req, res) => {
     SELECT * FROM todo
     where id = "${todoId}";`;
   const todoData = await db.get(query);
-  res.send(todoData);
+  res.send(toResponseObj(todoData));
 });
 
 app.get("/agenda/", validateDate, formatDate, async (req, res) => {
@@ -195,7 +209,7 @@ app.get("/agenda/", validateDate, formatDate, async (req, res) => {
         SELECT * FROM todo
         where due_date = "${date}";`;
   const todoData = await db.get(query);
-  res.send(todoData);
+  res.send(toResponseObj(todoData));
 });
 
 app.post("/todos/", validateBodyData, validateBodyDate, async (req, res) => {

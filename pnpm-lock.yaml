@@ -1173,7 +1173,7 @@ packages:
       semver: 5.7.1
       supports-color: 5.5.0
       touch: 3.1.0
-      undefsafe: 2.0.3
+      undefsafe: 2.0.5
       update-notifier: 4.1.3
     dev: false
     engines:
@@ -1794,12 +1794,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==
-  /undefsafe/2.0.3:
-    dependencies:
-      debug: 2.6.9
+  /undefsafe/2.0.5:
     dev: false
     resolution:
-      integrity: sha512-nrXZwwXrD/T/JXeygJqdCO6NZZ1L66HrxM/Z7mIq2oPanoN0F1nLx3lwJMu6AwJY69hdixaFQOuoYsMjE5/C2A==
+      integrity: sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA==
   /unique-string/2.0.0:
     dependencies:
       crypto-random-string: 2.0.0

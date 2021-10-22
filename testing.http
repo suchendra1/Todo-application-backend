@@ -13,7 +13,7 @@ GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
 GET http://localhost:3000/todos/1
 
 ###
-GET http://localhost:3000/agenda?date=2020-9-22
+GET http://localhost:3000/agenda?date=2021-9-21
 
 ###
 POST http://localhost:3000/todos/
